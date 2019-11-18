@@ -1,5 +1,6 @@
 class Flat < ApplicationRecord
   belongs_to :user
+  has_many :bookings, dependent: :destroy
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true
   validates :flat_type, presence: true, inclusion: { in: ['yurt', 'tipi', 'cabin', 'refuge', 'barn', 'shed'] }
