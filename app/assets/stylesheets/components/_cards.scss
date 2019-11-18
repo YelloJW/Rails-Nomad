@@ -11,6 +11,20 @@ h1 {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
+  &:hover {
+    transition: box-shadow 0.5s;
+    box-shadow: 0 0 15px rgba(0,0,0,0.8);
+  }
+}
+
+.card-link {
+  position: absolute;
+  z-index: 200;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
 }
 
 .card > img {
