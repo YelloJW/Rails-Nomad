@@ -1,10 +1,22 @@
 
 .homepage-banner {
-  position: relative;
+
 }
 
 .login {
+}
+
+.home-navbar {
+  justify-content: space-between;
   position: absolute;
   top: 5px;
-  right: 5px;
+  width: 100%;
+}
+
+.signup-login {
+  width: 11%;
+  justify-content: space-evenly;
+}
+h1{
+  color: #2A4740;
 }

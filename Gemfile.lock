@@ -204,7 +204,7 @@ DEPENDENCIES
   puma
   rails (= 5.2.3)
   redis
-  sassc-rails
+  sassc-rails (~> 2.1, >= 2.1.2)
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
