@@ -1,4 +1,6 @@
 class FlatsController < ApplicationController
+  before_action :find_flat, only: [:show, :create]
+
   def index
     @search = params[:search]
     if @search.nil?
@@ -17,4 +19,12 @@ class FlatsController < ApplicationController
   def create
   end
 
+  private
+
+  def flat_params
+  end
+
+  def find_flat
+    @flat = Flat.find(params[:id])
+  end
 end
