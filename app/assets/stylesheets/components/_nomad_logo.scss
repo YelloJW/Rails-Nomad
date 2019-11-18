@@ -1,0 +1,20 @@
+.nomad-logo {
+  color: white;
+  background-color: #2A4740;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  margin-bottom: 5px;
+  border: 1px solid white;
+  position: absolute;
+  top: 0px;
+  left: -767px;
+
+  i {
+    margin-bottom: 9px;
+  }
+}
