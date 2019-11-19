@@ -39,5 +39,16 @@
         <% end %>
       </div>
     </div>
+    <div class="w-25">
+      <div class="w-25 border p-3 rounded">
+        <%= link_to "Edit", edit_flat_path(@flat), class:"btn btn-primary"  %>
+      </div>
+    </div>
+    <div class="w-25">
+      <div class="w-25 border p-3 rounded">
+        <%= link_to "Delete", flat_path(@flat), method: :delete,
+          data: { confirm: "Are you sure?" }, class:"btn btn-danger"  %>
+      </div>
+    </div>
   </div>
 </div>
