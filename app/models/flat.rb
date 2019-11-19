@@ -9,4 +9,5 @@ class Flat < ApplicationRecord
   validates :sleeps, presence: true, numericality: { only_integer: true }
   validates :electricity, presence: true
   validates :drinking_water, presence: true
+  has_one_attached :photo
 end
