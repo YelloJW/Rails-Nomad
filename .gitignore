@@ -34,7 +34,6 @@ yarn-debug.log*
 .yarn-integrity
 
 # Ignore .env file containing credentials.
-.env*
 
 # Ignore Mac and Linux file system files
 *.swp
