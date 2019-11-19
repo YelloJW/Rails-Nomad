@@ -2,7 +2,9 @@
 
 
 <div class="container">
-  <h1>Search results for <%= @search.capitalize  %>...</h1>
+  <% if @search %>
+    <h1>Search results for <%= @search.capitalize  %>...</h1>
+  <% end %>
   <div class="row">
     <% @flats.each do |flat| %>
       <div class="col-12 col-md-6 col-lg-4">

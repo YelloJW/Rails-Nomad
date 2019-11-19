@@ -1,2 +1,42 @@
-<h1>Flats#new</h1>
-<p>Find me in app/views/flats/new.html.erb</p>
+<div class="container">
+  <%= simple_form_for @flat, method: :post do |f| %>
+  <%= f.error_notification %>
+
+  <div class="row justify-content-center">
+
+      <div class="col-sm-12 col-md-8 col-lg-8">
+        <%= f.input :name %>
+      </div>
+      <div class="col-sm-12 col-md-8 col-lg-8">
+        <%= f.input :address %>
+      </div>
+      <div class="col-sm-12 col-md-8 col-lg-8">
+        <%= f.input :sleeps, as: :radio_buttons, collection: [1, 2, 3, 4, 5, 6, 7, 8], wrapper: :vertical_collection_inline %>
+      </div>
+      <div class="col-sm-12 col-md-8 col-lg-8">
+        <%= f.input :flat_type, collection: ['Yurt', 'Tipi', 'Cabin', 'Refuge', 'Barn', 'Shed'], input_html: { multiple: false }, prompt: "Select flat type" %>
+      </div>
+      <div class="col-sm-6 col-lg-8 d-flex flex-row">
+        <div class="firstcheckbox">
+          <%= f.input :electricity %>
+        </div>
+        <div class="secondcheckbox ml-3">
+          <%= f.input :drinking_water %>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-8 col-lg-8">
+        <%= f.input :description %>
+      </div>
+      <div class="col-sm-12 col-md-8 col-lg-8">
+        <%= f.input :price_per_night, as: :range, input_html: { min: 10 , step: 'any' }, collection: 10..1000 %>
+      </div>
+      <div class="col-sm-12 col-md-8 col-lg-8 d-flex flex-row justify-content-between">
+        <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+        <%= f.button :submit, class: "btn-primary" %>
+      </div>
+
+  </div>
+
+  <% end %>
+
+</div>
