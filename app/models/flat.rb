@@ -7,4 +7,8 @@ class Flat < ApplicationRecord
   validates :address, presence: true, uniqueness: true
   validates :price_per_night, presence: true, numericality: { only_integer: true }
   validates :sleeps, presence: true, numericality: { only_integer: true }
+  validates :electricity, presence: true
+  validates :drinking_water, presence: true
+
+  has_one_attached :photo
 end
