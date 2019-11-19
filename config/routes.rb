@@ -8,5 +8,8 @@ Rails.application.routes.draw do
   resources :flats do
     resources :bookings, only: [:new, :create]
   end
-  resources :bookings, only: [:index, :show]
+  resources :bookings, only: [:index, :show] do
+    resources :reviews
+  end
+end
 
