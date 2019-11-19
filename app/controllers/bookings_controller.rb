@@ -8,13 +8,12 @@ class BookingsController < ApplicationController
   def new
     @flat = Flat.find(params[:flat_id])
     @booking = Booking.new
-
   end
 
   def create
     @flat = params[:flat_id]
     @user = current_user.id
-    if @from_date.nil? || @to_date.nil?
+    if params.dig(:booking, :from_date).nil? || params.dig(:booking, :to_date).nil?
       flash[:notice] = "Request invalid"
       redirect_to new_flat_booking_path(@flat)
     else
