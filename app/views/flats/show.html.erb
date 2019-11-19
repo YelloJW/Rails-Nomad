@@ -32,12 +32,8 @@
       </div>
       <p><%= @flat.description %></p>
     </div>
-    <div class="w-25">
-      <div class="w-25 border p-3 rounded">
-        <%= simple_form_for :bookings do |f| %>
-          <%= f.button :submit, "Book", class:"btn btn-primary" %>
-        <% end %>
-      </div>
-    </div>
   </div>
+    <div>
+      <%= render 'bookings/new', { flat: @flat, booking: Booking.new} %>
+    </div>
 </div>
