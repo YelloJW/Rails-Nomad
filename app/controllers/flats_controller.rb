@@ -1,5 +1,6 @@
 class FlatsController < ApplicationController
   before_action :find_flat, only: [:show, :create]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @search = params[:search]
