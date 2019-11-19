@@ -19,10 +19,25 @@ class BookingsController < ApplicationController
     else
       @from_date = Date.parse params.dig(:booking, :from_date)
       @to_date = Date.parse params.dig(:booking, :to_date)
-
       @booking = Booking.create(from_date: @from_date, to_date: @to_date, flat_id: @flat, user_id: @user)
       flash[:notice] = "Booking request sent"
       redirect_to flat_path(@flat)
     end
+  end
+
+  def edit
+    @booking = Booking.find(params[:id])
+    update
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.confirmed = true
+    @booking.save
+    redirect_to users_show_path
+  end
+
+  def destroy
+    raise
   end
 end

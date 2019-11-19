@@ -1,0 +1,54 @@
+<div class="container mt-4">
+  <% if !current_user.first_name.nil? %>
+    <h1>Hi <%= current_user.first_name %>, welcome to your dashboard!</h1>
+  <% else %>
+    <h1>Welcome to your dashboard!</h1>
+  <% end %>
+  <hr>
+  <h2>Booking requests...</h2>
+  <% current_user.bookings.each do |booking| %>
+  <% if !booking.confirmed %>
+          <div class="d-flex justify-content-between align-items-center my-3">
+            <img src="https://images.unsplash.com/photo-1536395155544-a3ba483e0b9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80" class="card-img-booking mr-1" alt="Yurt in the countryside">
+            <p><strong><%= booking.flat.name %></strong></p>
+            <p>From: <strong><%= booking.from_date %></strong></p>
+            <p>To: <strong><%= booking.to_date %></strong></p>
+            <p>Request by: <strong><%= booking.user.first_name %></strong></p>
+            <p><%= link_to "confirm", edit_booking_path(booking)  %></p>
+            <p><%= link_to "cancel", booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to cancel this booking request"}  %></p>
+          </div>
+    <% end %>
+  <% end %>
+  <h2>Confirmed bookings...</h2>
+  <% current_user.bookings.each do |booking| %>
+  <% if booking.confirmed %>
+          <div class="d-flex justify-content-between align-items-center my-3">
+            <img src="https://images.unsplash.com/photo-1536395155544-a3ba483e0b9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80" class="card-img-booking mr-1" alt="Yurt in the countryside">
+            <p><strong><%= booking.flat.name %></strong></p>
+            <p>From: <strong><%= booking.from_date %></strong></p>
+            <p>To: <strong><%= booking.to_date %></strong></p>
+            <p>Request by: <strong><%= booking.user.first_name %></strong></p>
+            <p><%= link_to "cancel", booking_path(booking), method: :delete  %></p>
+          </div>
+    <% end %>
+  <% end %>
+  <hr>
+  <h2>Your flats...</h2>
+  <div class="row d-flex">
+    <% current_user.flats.each do |flat| %>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1536395155544-a3ba483e0b9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80" class="card-img-top" alt="Yurt in the countryside">
+            <div class="card-body">
+              <h5 class="card-title"><%= flat.name %></h5>
+              <p class="card-text"><%= flat.description %></p>
+              <p class="card-text"><small class="text-muted">Last booked 3 days ago</small></p>
+              <%= link_to 'details', flat_path(flat) %>
+              <%= link_to 'edit', edit_flat_path(flat) %>
+              <%= link_to "delete", flat_path(flat), method: :delete  %>
+            </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

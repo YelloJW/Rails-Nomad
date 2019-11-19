@@ -1,15 +1,12 @@
 Rails.application.routes.draw do
-  get 'bookings/index'
-  get 'bookings/show'
-  get 'bookings/new'
-  get 'bookings/create'
-    devise_for :users
-  root to: 'pages#home'
+  get 'users/show'
+  devise_for :users
   resources :flats do
     resources :bookings, only: [:new, :create]
   end
-  resources :bookings, only: [:index, :show] do
+  resources :bookings, only: [:index, :show, :edit, :update, :destroy] do
     resources :reviews
   end
+  root to: 'pages#home'
 end
 
