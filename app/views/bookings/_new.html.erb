@@ -1,0 +1,8 @@
+
+<div class="w-25 border p-3 rounded">
+  <%= simple_form_for [flat, booking] do |f| %>
+    <%= f.input :from_date, as: :string, input_html: {type: :date, value: Time.now.strftime('%Y-%m-%d')} %>
+    <%= f.input :to_date, as: :string, input_html: {type: :date, value: Time.now.strftime('%Y-%m-%d')}%>
+    <%= f.button :submit, "Request to book", class:"btn btn-primary" %>
+  <% end %>
+</div>

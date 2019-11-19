@@ -32,6 +32,7 @@
       </div>
       <p><%= @flat.description %></p>
     </div>
+
     <div class="w-25">
       <div class="w-25 border p-3 rounded">
         <%= simple_form_for :bookings do |f| %>
@@ -50,5 +51,9 @@
           data: { confirm: "Are you sure?" }, class:"btn btn-danger"  %>
       </div>
     </div>
+
   </div>
+    <div>
+      <%= render 'bookings/new', { flat: @flat, booking: Booking.new} %>
+    </div>
 </div>
