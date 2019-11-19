@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   get 'bookings/create'
     devise_for :users
   root to: 'pages#home'
-  resources :flats, only: [:index, :show, :new, :create] do
+  resources :flats do
     resources :bookings, only: [:new, :create]
   end
   resources :bookings, only: [:index, :show]
-end
+
