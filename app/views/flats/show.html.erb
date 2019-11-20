@@ -38,24 +38,29 @@
         <div><i class="fas fa-bolt"></i><p><%= @flat.electricity %></p></div>
         <div><i class="fas fa-tint"></i><p><%= @flat.drinking_water %></p></div>
       </div>
-      <p><%= @flat.description %></p>
+      <h5><%= @flat.description %></h5>
+      <p><%= @flat.details %></p>
     </div>
 
+    <!--  edit & delete buttons -->
 
-    <div class="w-25">
-      <div class="w-25 border p-3 rounded">
-        <%= link_to "Edit", edit_flat_path(@flat), class:"btn btn-primary"  %>
-      </div>
-    </div>
-    <div class="w-25">
-      <div class="w-25 border p-3 rounded">
+        <%= link_to "Edit", edit_flat_path(@flat), class: "btn btn-flat" %>
+   <!--    </div> -->
+   <!--  </a> -->
+<!--     <div class="w-25">
+      <div class="w-25 border p-3 rounded"> -->
         <%= link_to "Delete", flat_path(@flat), method: :delete,
-          data: { confirm: "Are you sure?" }, class:"btn btn-danger"  %>
-      </div>
-    </div>
+          data: { confirm: "Are you sure?" }, class: "btn btn-danger"  %>
+ <!--      </div>
+    </div> -->
 
   </div>
     <div>
+      <% if user_signed_in? %>
       <%= render 'bookings/new', { flat: @flat, booking: Booking.new} %>
+        <% else %>
+         <button name="login" type="button" class="btn btn-light nomad-button" data-toggle="modal" data-target="#loginModal">Login to book
+                </button>
+      <% end %>
     </div>
 </div>

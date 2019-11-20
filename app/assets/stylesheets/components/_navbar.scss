@@ -1,12 +1,23 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+
+}
+
+
+.navbar-home {
+  border-width: 0px;
+  box-shadow: none;
+  background-color: transparent;
+  position: fixed;
+  width: 100% !important;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
+
+
+
+
