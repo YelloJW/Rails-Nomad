@@ -57,6 +57,11 @@
 
   </div>
     <div>
+      <% if user_signed_in? %>
       <%= render 'bookings/new', { flat: @flat, booking: Booking.new} %>
+        <% else %>
+         <button name="login" type="button" class="btn btn-light nomad-button" data-toggle="modal" data-target="#loginModal">Login to book
+                </button>
+      <% end %>
     </div>
 </div>
