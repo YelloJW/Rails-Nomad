@@ -1,10 +1,12 @@
 
 <div class="map-info-window">
   <div>
-    <% if flat.photo.attachment %>
-      <%= cl_image_tag flat.photo.key %>
-    <% else %>
-      <img class="rounded"width=100% src="https://images.unsplash.com/photo-1489421382202-f7ec0cfd96f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="First slide">
+    <%= link_to flat_path(flat) do %>
+      <% if flat.photo.attachment %>
+        <%= cl_image_tag(flat.photo.key, width:220, height:150) %>
+      <% else %>
+        <img class="rounded"width=100% src="https://images.unsplash.com/photo-1489421382202-f7ec0cfd96f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="First slide">
+      <% end %>
     <% end %>
   </div>
   <div>
