@@ -5,11 +5,11 @@ class FlatsController < ApplicationController
   def index
     @search = params[:search]
     if @search.nil?
-      @flats = Flat.all.geocoded
+      @flats = Flat.all
     else
-      @flats = Flat.where('address ILIKE ?', "%#{@search}%").geocoded
+      @flats = Flat.where('address ILIKE ?', "%#{@search}%")
     end
-    @markers = @flats.map do |flat|
+    @markers = @flats.geocoded.map do |flat|
       {
         lat: flat.latitude,
         lng: flat.longitude,
