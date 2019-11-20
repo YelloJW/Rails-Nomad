@@ -1,11 +1,20 @@
-
-
-
 <div class="container">
+  <!-- message showing search parameters -->
   <% if @search %>
     <h1>Search results for <%= @search.capitalize  %>...</h1>
   <% end %>
-  <div class="row">
+  <!-- container for map -->
+  <div
+  id="map"
+  style="width: 100%;
+  height: 500px;
+  border-radius: 10px"
+  data-markers = "<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  >
+  </div>
+  <!-- container for search results grid -->
+  <div class="row mt-3">
     <% @flats.each do |flat| %>
       <div class="col-12 col-md-6 col-lg-4">
         <div class="card">
