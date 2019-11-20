@@ -60,4 +60,15 @@ flat_nine = Flat.new(name: "Flora and fauna very closeby", description: "Really 
 flat_nine.photo.attach(io: file_nine, filename: 'some-image.jpg', content_type: 'image/jpg')
 flat_nine.save
 
+file_ten = URI.open('https://images.unsplash.com/photo-1572050925391-b514ef4d0efe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80')
+flat_ten = Flat.new(name: "Oakey dokey", description: "Really oakey", address: "3 West Street, Okehampton EX20 1HQ", price_per_night: 100, sleeps: 2, electricity: true, drinking_water: true, flat_type: "Cabin", user_id: 1, details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." )
+flat_ten.photo.attach(io: file_ten, filename: 'some-image.jpg', content_type: 'image/jpg')
+flat_ten.save
+
+file_eleven = URI.open('https://images.unsplash.com/photo-1562314415-f14cd8ff1535?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
+flat_eleven = Flat.new(name: "Cute place to stay", description: "Really cute", address: "Okehampton Railway Station, Station Road, Okehampton EX20 1EJ", price_per_night: 95, sleeps: 4, electricity: true, drinking_water: true, flat_type: "Cabin", user_id: 1, details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+flat_eleven.photo.attach(io: file_eleven, filename: 'some-image.jpg', content_type: 'image/jpg')
+flat_eleven.save
+
+
 puts "done"

@@ -36,6 +36,7 @@
     <h1>No results match your search. Please try again.</h1>
   <% else %>
       <h1>Search results for <%= @search.capitalize  %>...</h1>
+
       <div
         id="map"
         style="width: 100%;
@@ -45,7 +46,9 @@
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
       >
       </div>
-      <div class="row mt-3">
+
+      <div class="row mt-3 mb-4">
+
       <% @flats.each do |flat| %>
         <div class="col-12 col-md-6 col-lg-4">
           <div class="card mt-4">
@@ -66,4 +69,6 @@
       <% end %>
     </div>
   <% end %>
+  <br>
+  <br>
 </div>

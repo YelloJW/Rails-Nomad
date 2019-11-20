@@ -1,3 +1,7 @@
+.flex-container {
+  display: flex;
+}
+
 .btn-flat {
   color: white;
   padding: 8px 24px;
@@ -17,9 +21,19 @@
   padding: 8px 24px;
   border-radius: 4px;
   height: fit-content;
+  background-color: #472a31;
+  border-color: #472a31;
   transition: background 0.3s ease;
 }
 
 .btn-danger:hover {
   color: white;
+}
+
+#icons i {
+    display: block;
+    text-align: center;
+    padding: 5px;
+    font-size: 2em;
+    opacity: .6;
 }
