@@ -1,0 +1,25 @@
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  height: fit-content;
+  background: #2A4740;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #1BCB7F;
+  color: white;
+}
+
+.btn-danger {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  height: fit-content;
+  transition: background 0.3s ease;
+}
+
+.btn-danger:hover {
+  color: white;
+}
