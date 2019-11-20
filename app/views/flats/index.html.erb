@@ -35,7 +35,7 @@
   <% elsif Flat.where('address ILIKE ?', "%#{@search}%").exists? == false %>
     <h1>No results match your search. Please try again.</h1>
   <% else %>
-      <h1>Search results for <%= @search.capitalize  %>...</h1>
+      <h1>Search results for <%= @search&.capitalize  %>...</h1>
 
       <div
         id="map"
