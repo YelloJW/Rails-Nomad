@@ -1,0 +1,18 @@
+
+<div class="map-info-window">
+  <div>
+    <% if flat.photo.attachment %>
+      <%= cl_image_tag flat.photo.key %>
+    <% else %>
+      <img class="rounded"width=100% src="https://images.unsplash.com/photo-1489421382202-f7ec0cfd96f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="First slide">
+    <% end %>
+  </div>
+  <div>
+    <h6 class="pt-1"><strong><%= flat.name %></strong></h6>
+    <%= flat.description %><br>
+    <i class="fas fa-campground"></i> <%= flat.flat_type %> |
+    <i class="fas fa-bed"></i> <%= flat.sleeps %> |
+    <i class="fas fa-euro-sign"></i><%= flat.price_per_night %> <br>
+    Facilities: <i class="fas fa-bolt"></i>  <i class="fas fa-tint"></i>
+  </div>
+</div>
