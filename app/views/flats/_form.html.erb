@@ -29,7 +29,7 @@
       <%= f.input :price_per_night, as: :range, input_html: { min: 10 , step: 'any' }, collection: 10..1000 %>
     </div>
     <div class="col-sm-12 col-md-8 col-lg-8">
-      <%= f.input :photo, as: :file %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     </div>
     <div class="col-sm-12 col-md-8 col-lg-8 d-flex flex-row justify-content-between">
       <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>

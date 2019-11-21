@@ -29,3 +29,13 @@
 .btn-danger:hover {
   color: white;
 }
+
+
+#carouselExampleControls {
+  img {
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
