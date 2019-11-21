@@ -1,20 +1,20 @@
 <div class="container">
   <%= simple_form_for @flat do |f| %>
   <%= f.error_notification %>
-  <div class="row justify-content-center">
+  <div class="row justify-content-center mt-4">
     <div class="col-sm-12 col-md-8 col-lg-8">
-      <%= f.input :name %>
+      <%= f.input :name, label: 'Title', placeholder: 'Handbuilt Cabin in the Middle of a Forest' %>
     </div>
-    <div class="col-sm-12 col-md-8 col-lg-8">
-      <%= f.input :address %>
+    <div class="col-sm-12 col-md-8 col-lg-8 mt-2 ">
+      <%= f.input :address, placeholder: 'Forest of Dean' %>
     </div>
-    <div class="col-sm-12 col-md-8 col-lg-8">
-      <%= f.input :sleeps, as: :radio_buttons, collection: [1, 2, 3, 4, 5, 6, 7, 8], wrapper: :vertical_collection_inline %>
+    <div class="col-sm-12 col-md-8 col-lg-8 mt-2 ">
+      <%= f.input :sleeps, label: 'How many people can stay here?', placeholder: '2', as: :integer, input_html: { min: 1 } %>
     </div>
-    <div class="col-sm-12 col-md-8 col-lg-8">
-      <%= f.input :flat_type, collection: ['Yurt', 'Tipi', 'Cabin', 'Refuge', 'Barn', 'Shed'], input_html: { multiple: false }, prompt: "Select flat type" %>
+    <div class="col-sm-12 col-md-8 col-lg-8 mt-2 ">
+      <%= f.input :flat_type, collection: ['Yurt', 'Tipi', 'Cabin', 'Refuge', 'Barn', 'Shed'], input_html: { multiple: false }, prompt: "Please select" %>
     </div>
-    <div class="col-sm-6 col-lg-8 d-flex flex-row">
+    <div class="col-sm-6 col-lg-8 d-flex flex-row mt-2 ">
       <div>
         <%= f.input :electricity %>
       </div>
@@ -22,18 +22,21 @@
         <%= f.input :drinking_water %>
       </div>
     </div>
-    <div class="col-sm-12 col-md-8 col-lg-8">
-      <%= f.input :description %>
+    <div class="col-sm-12 col-md-8 col-lg-8 mt-2 ">
+      <%= f.input :description, label: 'Summary', placeholder: 'Very authentic wooden cabin with a log burner. Perfect for explorers.' %>
     </div>
-    <div class="col-sm-12 col-md-8 col-lg-8">
-      <%= f.input :price_per_night, as: :range, input_html: { min: 10 , step: 'any' }, collection: 10..1000 %>
+    <div class="col-sm-12 col-md-8 col-lg-8 mt-2 ">
+      <%= f.input :details, :input_html => {:rows => 5}, placeholder: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' %>
     </div>
-    <div class="col-sm-12 col-md-8 col-lg-8">
+    <div class="col-sm-12 col-md-8 col-lg-8 mt-2 ">
+      <%= f.input :price_per_night, label: 'Price per night (in £)', input_html: { min: 10 , step: 5 }, placeholder: '100' %>
+    </div>
+    <div class="col-sm-12 col-md-8 col-lg-8 mt-2 ">
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     </div>
-    <div class="col-sm-12 col-md-8 col-lg-8 d-flex flex-row justify-content-between">
+    <div class="col-sm-12 col-md-8 col-lg-8 d-flex flex-row justify-content-between mt-4 mb-5">
       <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
-      <%= f.button :submit, class: "btn-primary" %>
+      <%= f.button :submit, class: "btn-primary " %>
     </div>
   </div>
   <% end %>
