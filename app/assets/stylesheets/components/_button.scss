@@ -43,3 +43,38 @@
 button:focus {
   outline: none;
 }
+
+.your-flats-nav {
+  display: flex;
+  justify-content: space-between;
+  color: #2A4740;
+  align-items: center;
+}
+
+.add-flats-btn {
+  display: flex;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background-color: #2A4740;
+  transition: opacity 0.5s ease;
+    &:hover{
+      opacity: 0.7;
+    }
+p {
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  line-height: 1;
+  font-size: 12px;
+}
+i {
+  margin-right: 5px;
+  font-size: 10px;
+  line-height: 1.5;
+}
+}
+
+#my_link {
+  text-decoration: none;
+}

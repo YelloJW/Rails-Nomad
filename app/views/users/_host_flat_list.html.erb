@@ -1,4 +1,15 @@
-<h2>Your flats...</h2>
+<div class="your-flats-nav">
+  <div>
+    <h2>Your flats...</h2>
+  </div>
+  <%= link_to new_flat_path, id: "my_link" do %>
+    <div class="add-flats-btn">
+      <i class="fas fa-plus"></i>
+      <p>ADD FLAT</p>
+  </div>
+  <% end %>
+
+</div>
 <div class="row d-flex">
   <% current_user.flats.each do |flat| %>
     <div class="col-12 col-md-6 col-lg-4">
