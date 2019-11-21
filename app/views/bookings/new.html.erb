@@ -1,4 +1,5 @@
-<div class="container mt-4 border p-3 rounded">
+<!-- new booking page, in addition to partial to catch validation callback -->
+<div class="container new-booking-form">
   <h1>Booking request</h1>
   <%= simple_form_for [@flat, @booking] do |f| %>
     <%= f.input :from_date, as: :string, input_html: {type: :date, value: Time.now.strftime('%Y-%m-%d')} %>
