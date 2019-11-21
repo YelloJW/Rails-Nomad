@@ -7,7 +7,6 @@ class FlatsController < ApplicationController
     @flats = search_variables_set(@search)[:flats]
     @message = search_variables_set(@search)[:message]
     @markers = search_variables_set(@search)[:markers]
-    # @search_location = Geocoder.search(@search).first.coordinates
   end
 
   def show
