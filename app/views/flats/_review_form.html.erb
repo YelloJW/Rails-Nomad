@@ -1,5 +1,8 @@
+<!-- Form should only show if property has bookings -->
 <% if @flat.bookings.any? %>
+<!-- Form should not show if the flat has already been reviewed by that current user -->
   <% if @flat.bookings.where(user_id: current_user).last.reviews.any? == false %>
+<!-- Form should show if the current user has booked flat and their check in date is in the past -->
     <% if @flat.bookings.where(user_id: current_user).any? &&
           Flat.find(@flat.id).bookings.where(user_id: current_user).last.from_date <= Date.today %>
       <%= render 'reviews/new', { booking: @booking, review: @review } %>
