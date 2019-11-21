@@ -15,7 +15,7 @@ const initMapbox = () => {
 
   if (mapElement) {
 
-    mapboxgl.accessToken = process.env.MAPBOX_API_KEY;
+    mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/joeolley/ck379uaem0rs61cqoxxgm26kp'

@@ -1,5 +1,5 @@
-
-<div class="w-25 border p-3 rounded">
+<!-- booking form partial displayed in flat show page -->
+<div class="new-booking-partial">
   <%= simple_form_for [flat, booking] do |f| %>
     <%= f.input :from_date, as: :string, input_html: {type: :date, value: Time.now.strftime('%Y-%m-%d')} %>
     <%= f.input :to_date, as: :string, input_html: {type: :date, value: Time.now.strftime('%Y-%m-%d')}%>
