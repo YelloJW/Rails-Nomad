@@ -1,12 +1,27 @@
 .nomad-button {
-  background-color: #2A4740;
-  color: white;
+  background-color: #656839;
+  color: #F4FEC1;
+
+  border-radius: 5px;
+  border: 1px solid #F4FEC1;
+  padding: 3px 10px;
+  transition: background-color 0.5s ease;
+  &:hover {
+    background-color: #514B23;
+  }
 }
 
+
 .nomad-button-invert {
-  background-color: white;
-  color: #2A4740;
-  border-color: #2A4740;
+  background-color: #F4FEC1;
+  color: #656839;
+  border: 1px solid #656839;
+  border-radius: 5px;
+  padding: 3px 10px;
+  transition: background-color 0.5s ease;
+    &:hover {
+      background-color: #D2D68D;
+    }
 }
 
 .login {
@@ -17,4 +32,13 @@
   display: flex;
   justify-content: center;
   padding-bottom: 30px;
+}
+
+.search-button {
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  padding: 8px 10px;
 }

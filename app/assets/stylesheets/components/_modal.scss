@@ -1,7 +1,13 @@
 .form-actions input{
-  border: 1px solid black;
-  background-color: #2A4740;
-  color: white;
+  border: 1px solid #F4FEC1;
+  background-color: #656839;
+  color: #F4FEC1;
+  transition: background-color 0.5s ease;
+    &:hover {
+      background-color: #514B23;
+      color: #F4FEC1;
+      border: 1px solid #F4FEC1;
+    }
 }
 
 .form-actions {
