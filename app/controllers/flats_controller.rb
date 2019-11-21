@@ -10,6 +10,8 @@ class FlatsController < ApplicationController
   end
 
   def show
+    find_booking
+    find_reviews
   end
 
   def new
@@ -69,5 +71,17 @@ class FlatsController < ApplicationController
     else
       return { flats: nil, message: 'No results found, please search again...', markers: nil }
     end
+  end
+
+  def find_booking
+    if @flat.bookings.where(user_id: current_user).any? &&
+        Flat.find(@flat.id).bookings.where(user_id: current_user).last.from_date <= Date.today
+      @booking = Flat.find(@flat.id).bookings.where(user_id: current_user).last
+      @review = Review.new
+    end
+  end
+
+  def find_reviews
+    @reviews = @flat.reviews
   end
 end
