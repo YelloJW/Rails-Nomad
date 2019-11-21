@@ -60,9 +60,9 @@ ActiveRecord::Schema.define(version: 2019_11_20_115438) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "details"
     t.float "longitude"
     t.float "latitude"
-    t.text "details"
     t.index ["user_id"], name: "index_flats_on_user_id"
   end
 
