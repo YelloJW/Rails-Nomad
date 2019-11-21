@@ -1,0 +1,16 @@
+<div class="container text-center">
+  <% @reviews.each do |r| %>
+    <div>
+      <div class="row m-1 ">
+        <div class="col-12 d-flex justify-content-center">
+          <div>
+            <h3><%= r.rating.to_i %> <i class="far fa-star"></i></h3>
+          </div>
+        </div>
+        <div class="col-12">
+          <p><em>"<%= r.content %>"</em></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

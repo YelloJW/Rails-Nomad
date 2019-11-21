@@ -6,7 +6,6 @@
       <h1><%= @flat.name %></h1>
     </div>
   </div>
-
       <!--  edit & delete buttons -->
       <!-- Commented out until we install pundit! -->
       <!-- <div class="d-flex"> -->
@@ -14,18 +13,13 @@
         <%#= link_to "Delete", flat_path(@flat), method: :delete,
         data: { confirm: "Are you sure?" }, class: "btn btn-danger"  %>
       <!-- </div> -->
-
     <!-- carousel for show page -->
     <%= render "nomad_carousel" %>
-
     <!-- flat address at bottom of carousel -->
     <h4><%= @flat.address %></h4>
-
-
     <div class="w-100 mt-3">
       <!-- Commented out until we install pundit! -->
       <!-- <h4>Host: <%= @flat.user.first_name %></h4> -->
-
     <!-- Flats_facility card -->
     <%= render 'flats_facitily_card' %>
     <h3><%= @flat.description %></h3>
@@ -40,4 +34,11 @@
       </button>
     <% end %>
   </div>
+
+
+  <!-- Review form -->
+  <%= render 'review_form' %>
+
+  <!-- Reviews -->
+  <%= render 'reviews_list' %>
 </div>

@@ -1,20 +1,20 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
-
+  z-index: 2;
 }
-
 
 .navbar-home {
   border-width: 0px;
   box-shadow: none;
   background-color: transparent;
   position: fixed;
-  width: 100% !important;
+  width: 100vw
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  margin-right: 16px;
 }
 
 
