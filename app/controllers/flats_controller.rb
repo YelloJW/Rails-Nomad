@@ -4,20 +4,9 @@ class FlatsController < ApplicationController
 
   def index
     @search = params[:search]
-    if @search != ""
-      @flats = Flat.where('address ILIKE ?', "%#{@search}%")
-      @message = "Search results for #{@search.capitalize}"
-    else
-      @flats = Flat.all
-      @message = 'All results'
-    end
-    @markers = @flats.geocoded.map do |flat|
-      {
-        lat: flat.latitude,
-        lng: flat.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { flat: flat })
-      }
-    end
+    @flats = search_variables_set(@search)[:flats]
+    @message = search_variables_set(@search)[:message]
+    @markers = search_variables_set(@search)[:markers]
   end
 
   def show
@@ -58,5 +47,27 @@ class FlatsController < ApplicationController
 
   def find_flat
     @flat = Flat.find(params[:id])
+  end
+
+  def map_markers_set(flats)
+    flats.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { flat: flat })
+      }
+    end
+  end
+
+  def search_variables_set(search)
+    if search == ""
+      @flats = Flat.all
+      return { flats: @flats, message: 'All results', markers: map_markers_set(@flats) }
+    elsif Flat.where('address ILIKE ?', "%#{@search}%").exists?
+      @flats = Flat.where('address ILIKE ?', "%#{@search}%")
+      return { flats: @flats, message: "Search results for #{@search.capitalize}", markers: map_markers_set(@flats)}
+    else
+      return { flats: nil, message: 'No results found, please search again...', markers: nil }
+    end
   end
 end

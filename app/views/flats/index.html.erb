@@ -1,6 +1,6 @@
 <div class="container">
   <h1><%= @message %></h1>
-  <%= render 'map' %>
-  <%= render 'flat_grid', {flats: @flats} %>
+  <%= render 'map' unless @flats.nil? %>
+  <%= render 'flat_grid', {flats: @flats} unless @flats.nil? %>
 </div>
 
