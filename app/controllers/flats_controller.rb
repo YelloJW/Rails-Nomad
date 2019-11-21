@@ -4,16 +4,18 @@ class FlatsController < ApplicationController
 
   def index
     @search = params[:search]
-    if @search.nil?
-      @flats = Flat.all
-    else
+    if @search != ""
       @flats = Flat.where('address ILIKE ?', "%#{@search}%")
+      @message = "Search results for #{@search.capitalize}"
+    else
+      @flats = Flat.all
+      @message = 'All results'
     end
     @markers = @flats.geocoded.map do |flat|
       {
         lat: flat.latitude,
         lng: flat.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: {flat: flat})
+        infoWindow: render_to_string(partial: "info_window", locals: { flat: flat })
       }
     end
   end

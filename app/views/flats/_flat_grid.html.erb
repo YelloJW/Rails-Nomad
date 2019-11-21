@@ -1,0 +1,20 @@
+<!-- Grid for flats on show page -->
+<div class="row">
+  <% flats.each do |flat| %>
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card">
+        <a href="<%= flat_path(flat) %>" class="card-link"></a>
+        <% if flat.photo.attached? %>
+          <%= cl_image_tag flat.photo.key, alt: "First slide", class: "card-img-top" %>
+        <% else %>
+          <img src="https://images.unsplash.com/photo-1536395155544-a3ba483e0b9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80" class="card-img-top">
+        <% end %>
+        <div class="card-body">
+          <h5 class="card-title"><%= flat.name %></h5>
+          <p class="card-text"><%= flat.description %></p>
+          <p class="card-text"><small class="text-muted">Last booked <%= rand(1..10) %> days ago</small></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
