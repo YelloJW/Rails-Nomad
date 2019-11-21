@@ -1,9 +1,6 @@
 <div class="container mt-4">
-  <% if !current_user.first_name.nil? %>
-    <h1>Hi <%= current_user.first_name %>, welcome to your dashboard!</h1>
-  <% else %>
-    <h1>Welcome to your dashboard!</h1>
-  <% end %>
+
+  <h1><%= @message %></h1>
 
   <%= render 'booking_request_list' %>
 
