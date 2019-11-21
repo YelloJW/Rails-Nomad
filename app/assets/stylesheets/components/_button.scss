@@ -1,7 +1,6 @@
 .nomad-button {
   background-color: #656839;
   color: #F4FEC1;
-
   border-radius: 5px;
   border: 1px solid #F4FEC1;
   padding: 3px 10px;
@@ -10,7 +9,6 @@
     background-color: #514B23;
   }
 }
-
 
 .nomad-button-invert {
   background-color: #F4FEC1;
@@ -41,4 +39,7 @@
   top: 7px;
   right: 7px;
   padding: 8px 10px;
+}
+button:focus {
+  outline: none;
 }
