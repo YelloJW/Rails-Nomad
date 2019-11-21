@@ -34,7 +34,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.confirmed = true
     @booking.save
-    redirect_to users_show_path
+    redirect_to root_path
   end
 
   def destroy
