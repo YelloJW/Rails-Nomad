@@ -1,10 +1,11 @@
 <div class="container mt-4">
-
+<!-- Welcome message is set by controller depending on whether user has a name
+ -->
   <h1><%= @message %></h1>
-
+<!-- Partial for booking requests -->
   <%= render 'booking_request_list' %>
-
+<!-- Partial for confirmed bookings -->
   <%= render 'confirmed_bookings_list' %>
-
+<!-- Partial for flats list view (if host logic needs to be implemented) -->
   <%= render 'host_flat_list' %>
 </div>
