@@ -1,6 +1,6 @@
 .nomad-logo {
-  color: white;
-  background-color: #2A4740;
+  color: #F4FEC1;
+  background-color: #656839;
   width: 56px;
   height: 56px;
   border-radius: 50%;
@@ -9,11 +9,15 @@
   align-items: center;
   font-size: 30px;
   margin-bottom: 5px;
-  border: 1px solid white;
+  border: 1px solid #F4FEC1;
   margin-left: 5px;
-
-  i {
-    margin-bottom: 9px;
-  }
+  transition: background-color 0.5s ease;
+    &:hover{
+      background-color: #514B23;
+    }
+i {
+  margin-bottom: 9px;
 }
+}
+
 
