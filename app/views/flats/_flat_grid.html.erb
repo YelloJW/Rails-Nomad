@@ -12,7 +12,7 @@
         <div class="card-body">
           <h5 class="card-title"><%= flat.name %></h5>
           <p class="card-text"><%= flat.description %></p>
-          <p class="card-text"><small class="text-muted">Last booked <%= rand(1..10) %> days ago</small></p>
+          <p class="card-text"><small><%= "#{flat.distance.to_i} miles away" unless @search == "" %></small></p>
         </div>
       </div>
     </div>

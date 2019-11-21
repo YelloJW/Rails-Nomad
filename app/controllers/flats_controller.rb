@@ -65,12 +65,12 @@ class FlatsController < ApplicationController
     if search == ""
       @flats = Flat.all
       return { flats: @flats, message: 'All results', markers: map_markers_set(@flats) }
-    elsif Flat.where('address ILIKE ?', "%#{@search}%").exists?
-      @flats = Flat.where('address ILIKE ?', "%#{@search}%")
-      return { flats: @flats, message: "Search results for #{@search.capitalize}", markers: map_markers_set(@flats) }
     else
-      return { flats: nil, message: 'No results found, please search again...', markers: nil }
+      search_coordinates = Geocoder.search(search).first.coordinates
     end
+    @flats = Flat.near(search_coordinates, 50, units: :km)
+    return { flats: @flats, message: "Search results for #{@search}", markers: map_markers_set(@flats) } if @flats != []
+    return { flats: nil, message: 'No results found in this area, please search again...', markers: nil }
   end
 
   def find_booking

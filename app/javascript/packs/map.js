@@ -19,7 +19,6 @@ const initMapbox = () => {
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/joeolley/ck379uaem0rs61cqoxxgm26kp'
-      // style: 'mapbox://styles/mapbox/navigation-preview-day-v2'
     });
 
   const markers = JSON.parse(mapElement.dataset.markers);
@@ -32,7 +31,7 @@ const initMapbox = () => {
       .addTo(map);
     });
 
-   map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+  map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
                                       mapboxgl: mapboxgl }));
 
   fitMapToMarkers(map, markers);

@@ -1,4 +1,4 @@
-
+<!-- info window for map markers -->
 <div class="map-info-window">
   <div>
     <%= link_to flat_path(flat) do %>
@@ -17,4 +17,5 @@
     <i class="fas fa-euro-sign"></i><%= flat.price_per_night %> <br>
     Facilities: <i class="fas fa-bolt"></i>  <i class="fas fa-tint"></i>
   </div>
+  <small><%= "#{flat.distance.to_i} miles away" unless @search == "" %></small>
 </div>
