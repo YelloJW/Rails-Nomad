@@ -10,6 +10,8 @@ class FlatsController < ApplicationController
   end
 
   def show
+    find_booking
+    find_reviews
   end
 
   def new
@@ -42,7 +44,7 @@ class FlatsController < ApplicationController
   private
 
   def flat_params
-    params.require(:flat).permit(:name, :address, :price_per_night, :electricity, :drinking_water, :sleeps, :description, :flat_type, :photo)
+    params.require(:flat).permit(:name, :address, :price_per_night, :electricity, :drinking_water, :sleeps, :description, :flat_type, photos: [])
   end
 
   def find_flat
@@ -65,9 +67,21 @@ class FlatsController < ApplicationController
       return { flats: @flats, message: 'All results', markers: map_markers_set(@flats) }
     elsif Flat.where('address ILIKE ?', "%#{@search}%").exists?
       @flats = Flat.where('address ILIKE ?', "%#{@search}%")
-      return { flats: @flats, message: "Search results for #{@search.capitalize}", markers: map_markers_set(@flats)}
+      return { flats: @flats, message: "Search results for #{@search.capitalize}", markers: map_markers_set(@flats) }
     else
       return { flats: nil, message: 'No results found, please search again...', markers: nil }
     end
+  end
+
+  def find_booking
+    if @flat.bookings.where(user_id: current_user).any? &&
+        Flat.find(@flat.id).bookings.where(user_id: current_user).last.from_date <= Date.today
+      @booking = Flat.find(@flat.id).bookings.where(user_id: current_user).last
+      @review = Review.new
+    end
+  end
+
+  def find_reviews
+    @reviews = @flat.reviews
   end
 end
