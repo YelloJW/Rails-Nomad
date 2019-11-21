@@ -9,14 +9,14 @@
       <%= f.input :address, input_html: { id: "address-input"} %>
     </div>
     <div class="col-sm-12 col-md-8 col-lg-8">
-      <%= f.input :sleeps, as: :radio_buttons, collection: [1, 2, 3, 4, 5, 6, 7, 8], wrapper: :vertical_collection_inline %>
+      <%= f.input :sleeps, input_html: { min: '1' } %>
     </div>
     <div class="col-sm-12 col-md-8 col-lg-8">
       <%= f.input :flat_type, collection: ['Yurt', 'Tipi', 'Cabin', 'Refuge', 'Barn', 'Shed'], input_html: { multiple: false }, prompt: "Select flat type" %>
     </div>
     <div class="col-sm-6 col-lg-8 d-flex flex-row">
       <div class="firstcheckbox">
-        <%= f.input :electricity %>
+        <%= f.input :electricity%>
       </div>
       <div class="secondcheckbox ml-3">
         <%= f.input :drinking_water %>
@@ -26,7 +26,7 @@
       <%= f.input :description %>
     </div>
     <div class="col-sm-12 col-md-8 col-lg-8">
-      <%= f.input :price_per_night, as: :range, input_html: { min: 10 , step: 'any' }, collection: 10..1000 %>
+      <%= f.input :price_per_night, input_html: { min: 10 , step: 5 } %>
     </div>
     <div class="col-sm-12 col-md-8 col-lg-8">
       <%= f.input :photo, as: :file %>
