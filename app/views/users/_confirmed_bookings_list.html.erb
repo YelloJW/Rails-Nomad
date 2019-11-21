@@ -1,0 +1,14 @@
+  <h2>Confirmed bookings...</h2>
+  <% current_user.bookings.each do |booking| %>
+  <% if booking.confirmed %>
+          <div class="dashboard-list">
+            <img src="https://images.unsplash.com/photo-1536395155544-a3ba483e0b9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80" class="card-img-booking mr-1" alt="Yurt in the countryside">
+            <p><strong><%= booking.flat.name %></strong></p>
+            <p>From: <strong><%= booking.from_date %></strong></p>
+            <p>To: <strong><%= booking.to_date %></strong></p>
+            <p>Request by: <strong><%= booking.user.first_name %></strong></p>
+            <p><%= link_to "cancel", booking_path(booking), method: :delete  %></p>
+          </div>
+    <% end %>
+  <% end %>
+  <hr>

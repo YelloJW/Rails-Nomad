@@ -11,7 +11,9 @@ h1 {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
   position: relative;
+  margin-top: 25px;
   &:hover {
     transition: box-shadow 0.5s;
     box-shadow: 0 0 15px rgba(0,0,0,0.8);
