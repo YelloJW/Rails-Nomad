@@ -3,14 +3,14 @@
   <%= f.error_notification %>
   <div class="row justify-content-center mt-4">
     <div class="col-sm-12 col-md-8 col-lg-8">
-      <%= f.input :name, label: 'Title', placeholder: 'Handbuilt Cabin in the Middle of a Forest' %>
+      <%= f.input :name, label: 'Title', placeholder: "E.g. cosy cabin in the middle of the woods" %>
     </div>
 
     <div class="col-sm-12 col-md-8 col-lg-8 mt-2 ">
-      <%= f.input :address, placeholder: 'Forest of Dean' %>
+      <%= f.input :address, placeholder: 'What is the address of your property' %>
     </div>
     <div class="col-sm-12 col-md-8 col-lg-8 mt-2 ">
-      <%= f.input :sleeps, label: 'How many people can stay here?', placeholder: '2', as: :integer, input_html: { min: 1 } %>
+      <%= f.input :sleeps, label: 'How many people can stay here?', placeholder: 'Please enter a number', as: :integer, input_html: { min: 1 } %>
 
     </div>
     <div class="col-sm-12 col-md-8 col-lg-8 mt-2 ">
@@ -27,15 +27,15 @@
       </div>
     </div>
     <div class="col-sm-12 col-md-8 col-lg-8 mt-2 ">
-      <%= f.input :description, label: 'Summary', placeholder: 'Very authentic wooden cabin with a log burner. Perfect for explorers.' %>
+      <%= f.input :description, label: 'Summary', placeholder: 'Please give a short description of your property.' %>
     </div>
 
     <div class="col-sm-12 col-md-8 col-lg-8 mt-2 ">
-      <%= f.input :details, :input_html => {:rows => 5}, placeholder: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' %>
+      <%= f.input :details, :input_html => {:rows => 5}, placeholder: 'Please provide a detailed description of your property, including any other facilities, access, policies etc.' %>
 
     </div>
     <div class="col-sm-12 col-md-8 col-lg-8 mt-2 ">
-      <%= f.input :price_per_night, label: 'Price per night (in £)', input_html: { min: 10 , step: 5 }, placeholder: '100' %>
+      <%= f.input :price_per_night, label: 'Price per night (in £)', placeholder: 'Please enter a price per night', input_html: { min: 10 , step: 5 } %>
     </div>
     <div class="col-sm-12 col-md-8 col-lg-8 mt-2 ">
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
