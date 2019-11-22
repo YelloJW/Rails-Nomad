@@ -42,10 +42,8 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    algolia-places-rails (1.16.4)
-      rails (>= 5.0.0)
     arel (9.0.0)
-    autoprefixer-rails (9.7.1)
+    autoprefixer-rails (9.7.2)
       execjs
     aws_cf_signer (0.1.3)
     bcrypt (3.1.13)
@@ -203,7 +201,7 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
-    webpacker (3.5.5)
+    webpacker (4.2.0)
       activesupport (>= 4.2)
       rack-proxy (>= 0.6.1)
       railties (>= 4.2)
@@ -215,7 +213,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  algolia-places-rails (~> 1.16, >= 1.16.4)
   autoprefixer-rails
   bootsnap
   cloudinary (~> 1.12.0)
