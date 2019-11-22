@@ -3,6 +3,40 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 30px 0px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  text-align: center;
+  vertical-align: center;
+  align-items: center;
+  color: #303030;
 }
 
+// .upcoming-bookings .dashboard-list {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   margin: 20px;
+//   padding: 20px;
+//   background-color: white;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+//   border-radius: 5px;
+//   text-align: center;
+//   vertical-align: center;
+//   align-items: center;
+//   color: #303030;
+//   &:hover {
+//     opacity: 0.7;
+//     cursor: pointer;
+//   }
+// }
+
+
+
+// .past-bookings {
+//   padding: 50px;
+//   &:hover {
+//     opacity: 1;
+//   }
+// }
