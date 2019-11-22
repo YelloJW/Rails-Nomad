@@ -1,41 +1,65 @@
+<div style="min-height: calc(100vh - 77px);">
+  <div class="shadow rounded">
+    <div class="w-100">
+      <br>
+      <div class="container-fluid row mx-0">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <h1><%= @flat.name %></h1>
+          <h6 class="flat-address"><%= @flat.address %></h6>
+        </div>
 
-<div class="container mt-3 shadow rounded">
-  <div class="w-100 mt-3">
-    <br>
-    <div class="d-flex justify-content-center">
-      <h1><%= @flat.name %></h1>
-    </div>
-  </div>
-    <!--  edit & delete buttons -->
-    <!-- Commented out until we install pundit! -->
-    <!-- <div class="d-flex"> -->
-    <%#= link_to "Edit", edit_flat_path(@flat), class: "btn btn-flat mr-2" %>
-    <%#= link_to "Delete", flat_path(@flat), method: :delete,
-    data: { confirm: "Are you sure?" }, class: "btn btn-danger"  %>
-  <!-- </div> -->
-  <!-- carousel for show page -->
-  <%= render "nomad_carousel" %>
-  <!-- flat address at bottom of carousel -->
-  <h4><%= @flat.address %></h4>
-  <div class="w-100 mt-3">
-    <!-- Commented out until we install pundit! -->
-    <!-- <h4>Host: <%= @flat.user.first_name %></h4> -->
-    <!-- Flats_facility card -->
-    <%= render 'flats_facitily_card' %>
-    <h3><%= @flat.description %></h3>
-  <p><%= @flat.details %></p>
-  </div>
 
-  <div class="button-center">
-    <% if user_signed_in? %>
-      <%= render 'bookings/new', { flat: @flat, booking: Booking.new} %>
-    <% else %>
-      <button name="login" type="button" class="btn btn-light nomad-button" data-toggle="modal" data-target="#loginModal">Login to book
-      </button>
-    <% end %>
+      </div>
+
+      <!--  edit & delete buttons -->
+      <!-- Commented out until we install pundit! -->
+      <!-- <div class="d-flex"> -->
+      <%#= link_to "Edit", edit_flat_path(@flat), class: "btn btn-flat mr-2" %>
+      <%#= link_to "Delete", flat_path(@flat), method: :delete,
+      data: { confirm: "Are you sure?" }, class: "btn btn-danger"  %>
+    <!-- </div> -->
+    <!-- carousel for show page -->
+    <div class="container-fluid row container-no-margin">
+      <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
+        <%= render "nomad_carousel" %>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 w-100 my-3 shadow-sm bg-white rounded" style="position:sticky;top:10px;">
+          <% if user_signed_in? %>
+            <%= render 'bookings/new', { flat: @flat, booking: Booking.new} %>
+          <% else %>
+            <button name="login" type="button" class="btn btn-light nomad-button" data-toggle="modal" data-target="#loginModal">Login to book
+            </button>
+          <% end %>
+        </div>
+      </div>
+
+
+      <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+        <div style="padding-left:60px;padding-right:60px;color:#2A4740;" class="w-100 shadow-sm mb-3 bg-white rounded py-5">
+        <!-- Commented out until we install pundit! -->
+        <!-- <h4>Host: <%= @flat.user.first_name %></h4> -->
+        <!-- Flats_facility card -->
+
+            <h5 class="header-font-weight">Facilities</h5>
+            <%= render 'flats_facitily_card' %>
+            <hr>
+            <div class="padded-headers-top">
+              <h5 class="header-font-weight">Summary</h5>
+              <h6 class="padded-headers-bot"><%= @flat.description %></h6>
+            </div>
+            <hr>
+            <div class="padded-headers-top">
+              <h5 class="header-font-weight">Description</h5>
+              <p><%= @flat.details %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- flat address at bottom of carousel -->
+
+    <!-- Review form -->
+    <%= render 'review_form' %>
+    <!-- Reviews -->
+    <%= render 'reviews_list' %>
   </div>
-  <!-- Review form -->
-  <%= render 'review_form' %>
-  <!-- Reviews -->
-  <%= render 'reviews_list' %>
 </div>
