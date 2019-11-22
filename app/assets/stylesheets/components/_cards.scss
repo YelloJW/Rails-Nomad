@@ -88,4 +88,13 @@ h1 {
     cursor: pointer;
     box-shadow: 0 0 8px rgba(0,0,0,0.5);
   }
+ }
+  
+.flats-index-container {
+  display: flex;
+  margin: 20px;
+}
+
+.flats-index-card-grid {
+  margin: 20px;
 }

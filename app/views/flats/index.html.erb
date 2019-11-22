@@ -1,15 +1,14 @@
-<div class="container">
-  <%= simple_form_for :search, url: flats_path, method: :get do |f| %>
-    <div class="mt-3 search-form-control form-group w-100">
-      <input id="address-input" value="<%= @search %>" class="form-control string required" placeholder="Location" type="text" name="search" id="search_query" />
-      <button name="button" type="submit" class="btn btn-dark nomad-button">
-        <i class="fas fa-search"></i> Search
-        <div></div>
-      </button>
-    </div>
-  <% end %>
-  <h1><%= @message %></h1>
-  <%= render 'map' , { search_location: @searchlocation } unless @flats == [] %>
-  <%= render 'flat_grid', {flats: @flats} unless @flats == [] %>
+<div class="flats-index-container">
+  <div id="map-container">
+    <%= render 'search_bar' %>
+    <%= render 'map' , { search_location: @searchlocation } unless @flats == [] %>
+  </div>
+  <div class="flats-index-card-grid">
+    <h4 class="my-4"><strong><%= @message %></strong></h4>
+    <!-- duplicate renders until we get more seeds-->
+    <% 10.times do %>
+      <%= render 'flat_grid', {flats: @flats} unless @flats == [] %>
+    <% end %>
+  </div>
 </div>
 
