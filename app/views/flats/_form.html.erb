@@ -16,12 +16,10 @@
     <div class="col-sm-12 col-md-8 col-lg-8 mt-2 ">
       <%= f.input :flat_type, collection: ['Yurt', 'Tipi', 'Cabin', 'Refuge', 'Barn', 'Shed'], input_html: { multiple: false }, prompt: "Please select" %>
     </div>
-
     <div class="col-sm-6 col-lg-8 d-flex flex-row mt-2 ">
       <div>
         <%= f.input :electricity %>
       </div>
-
       <div class="ml-3">
         <%= f.input :drinking_water %>
       </div>
@@ -29,10 +27,8 @@
     <div class="col-sm-12 col-md-8 col-lg-8 mt-2 ">
       <%= f.input :description, label: 'Summary', placeholder: 'Very authentic wooden cabin with a log burner. Perfect for explorers.' %>
     </div>
-
     <div class="col-sm-12 col-md-8 col-lg-8 mt-2 ">
       <%= f.input :details, :input_html => {:rows => 5}, placeholder: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' %>
-
     </div>
     <div class="col-sm-12 col-md-8 col-lg-8 mt-2 ">
       <%= f.input :price_per_night, label: 'Price per night (in £)', input_html: { min: 10 , step: 5 }, placeholder: '100' %>
