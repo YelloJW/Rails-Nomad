@@ -15,7 +15,8 @@
             <!-- <p><%#= link_to "confirm", edit_booking_path(booking)  %></p> -->
             <!-- <p><%#= link_to "cancel", booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to cancel this booking request"}  %></p> -->
           </div>
-
-    <% end %>
+  <% else %>
+    <p>You don't have any upcoming bookings.</p>
+  <% end %>
   <% end %>
 </div>
