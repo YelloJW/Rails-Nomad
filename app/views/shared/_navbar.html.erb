@@ -17,18 +17,18 @@
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
-  <% else %>
-    <div class="d-flex flex-row justify-content-between signup-login">
-      <div class="login">
-        <button name="login" type="button" class="nomad-button" data-toggle="modal" data-target="#loginModal">Login
-        </button>
+    <% else %>
+      <div class="d-flex flex-row justify-content-between signup-login">
+        <div class="login">
+          <button name="login" type="button" class="nomad-button" data-toggle="modal" data-target="#loginModal">Login
+          </button>
+        </div>
+        <div class="signup">
+          <button name="signup" type="button" class="nomad-button" data-toggle="modal" data-target="#signupModal">Sign Up
+          </button>
+        </div>
       </div>
-      <div class="signup">
-        <button name="signup" type="button" class="nomad-button" data-toggle="modal" data-target="#signupModal">SignUp
-        </button>
-      </div>
-    </div>
-  <% end %>
-    </ul>
+    <% end %>
+      </ul>
   </div>
 </div>
