@@ -10,9 +10,7 @@
       <div class="flats-index-card-grid">
         <h4><%= @message %></h4>
         <!-- duplicate renders until we get more seeds-->
-        <% 10.times do %>
-          <%= render 'flat_grid', {flats: @flats} unless @flats == [] %>
-        <% end %>
+        <%= render 'flat_grid', {flats: @flats} unless @flats == [] %>
       </div>
     </div>
   </div>
