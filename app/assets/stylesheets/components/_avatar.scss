@@ -4,6 +4,10 @@
   height: 56px;
   object-fit: cover;
   border: 1px solid white;
+  &:hover {
+    opacity: 0.7;
+    color: #2A4740;
+  }
 }
 
 .avatar-large {
@@ -12,15 +16,28 @@
   height: 56px;
   object-fit: cover;
   border: 1px solid white;
+  &:hover {
+    opacity: 0.7;
+    color: #2A4740;
+  }
 }
 
 .avatar-bordered {
   width: 40px;
   border-radius: 50%;
   border: 1px solid white;
+  &:hover {
+    opacity: 0.7;
+    color: #2A4740;
+  }
 }
+
 .avatar-square {
   width: 40px;
   border-radius: 0px;
   border: 1px solid white;
+  &:hover {
+    opacity: 0.7;
+    color: #2A4740;
+  }
 }
