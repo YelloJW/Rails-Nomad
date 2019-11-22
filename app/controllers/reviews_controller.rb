@@ -17,9 +17,9 @@ class ReviewsController < ApplicationController
     @review.booking = @booking
     @flat = @booking.flat
     if @review.save
-      redirect_to flat_path(@flat)
+      redirect_to user_path(current_user)
     else
-      render 'flats/show'
+      render 'user/show'
     end
   end
 
