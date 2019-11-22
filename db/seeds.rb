@@ -77,9 +77,13 @@ flat_ten = Flat.new(name: "Oakey dokey", description: "Really oakey", address: "
 flat_ten.photos.attach(io: file_ten, filename: 'some-image.jpg', content_type: 'image/jpg')
 flat_ten.save
 
-file_eleven = URI.open('https://images.unsplash.com/photo-1562314415-f14cd8ff1535?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
+file_eleven = URI.open('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80')
+file_eleven_photo2 = URI.open('https://images.unsplash.com/photo-1532309975451-db55af55d385?ixlib=rb-1.2.1&auto=format&fit=crop&w=1651&q=80')
+file_eleven_photo3 = URI.open('https://images.unsplash.com/photo-1502218808493-e5fd26249efc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80')
 flat_eleven = Flat.new(name: "Cute place to stay", description: "Really cute", address: "Okehampton Railway Station, Station Road, Okehampton EX20 1EJ", price_per_night: 95, sleeps: 4, electricity: true, drinking_water: true, flat_type: "Cabin", user_id: 1, details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
 flat_eleven.photos.attach(io: file_eleven, filename: 'some-image.jpg', content_type: 'image/jpg')
+flat_eleven.photos.attach(io: file_eleven_photo2, filename: 'some-image2.jpg', content_type: 'image/jpg')
+flat_eleven.photos.attach(io: file_eleven_photo3, filename: 'some-image3.jpg', content_type: 'image/jpg')
 flat_eleven.save
 
 
