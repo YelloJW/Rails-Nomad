@@ -6,20 +6,25 @@
             <%= link_to flat_path(booking.flat) do %>
               <%= cl_image_tag booking.flat.photos.first.key %>
             <% end %>
-            <div class="upcoming-bookings-description">
-              <h5><%= booking.flat.name %></h5>
-              From: <%= booking.from_date %> / <%= booking.to_date %></p>
-              <p><%= booking.flat.description %></p>
-            </div>
-            <div>
-              <% if booking.reviews.exists? %>
-                <div>
-                  <%= booking.reviews.first.rating %>
-                  <%= booking.reviews.first.content %>
-                </div>
-              <% else %>
-              <%= render 'reviews/new', { booking: booking, review: Review.new} %>
-              <% end %>
+            <div class="card-content">
+              <div class="upcoming-bookings-description">
+                <h5 color="black"><%= booking.flat.name %></h5>
+                From: <%= booking.from_date %> / <%= booking.to_date %></p>
+                <p><%= booking.flat.description %></p>
+              </div>
+              <div class="w-50 p-3">
+                <% if booking.reviews.exists? %>
+                  <div>
+                    <h5>Your review</h5>
+                    <% booking.reviews.first.rating.times do %>
+                      <i class="fas fa-star"></i>
+                    <% end %>
+                    <p><em>"<%= booking.reviews.first.content %>"</em></p>
+                  </div>
+                <% else %>
+                <%= render 'reviews/new', { booking: booking, review: Review.new} %>
+                <% end %>
+              </div>
             </div>
           </div>
       <% end %>
