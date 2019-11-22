@@ -11,7 +11,13 @@
   vertical-align: center;
   align-items: center;
   color: #303030;
+   &:hover {
+    transition: box-shadow 0.5s;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  }
 }
+
+
 
 // .upcoming-bookings .dashboard-list {
 //   display: flex;
