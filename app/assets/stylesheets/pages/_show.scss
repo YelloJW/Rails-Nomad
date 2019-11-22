@@ -2,6 +2,10 @@
   display: flex;
 }
 
+.flat-address {
+  color: rgba(42,71,64,0.7);
+}
+
 .btn-flat {
   color: white;
   padding: 8px 24px;
@@ -39,3 +43,14 @@
   }
 }
 
+.padded-headers-top {
+  padding-top: 20px;
+}
+
+.padded-headers-bot {
+  padding-bottom: 20px;
+}
+
+.header-font-weight {
+  font-weight: bold;
+}
