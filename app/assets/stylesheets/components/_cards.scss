@@ -1,6 +1,5 @@
-
 h1 {
-  font-family: "Raleway", "Helvetica", "sans-serif";
+  color: #2A4740;
 }
 
 .recently-booked {
@@ -11,12 +10,12 @@ h1 {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 10px;
+  border-radius: 5px;
   position: relative;
   margin-top: 25px;
   &:hover {
     transition: box-shadow 0.5s;
-    box-shadow: 0 0 15px rgba(0,0,0,0.8);
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
   }
 }
 
@@ -68,6 +67,11 @@ h1 {
   width: 50px;
 }
 
+.card-img-booking .card-larger {
+  height: 100px;
+  width: 100px;
+}
+
 .flats-facility-card {
   display: flex;
   justify-content: space-around;
@@ -79,6 +83,13 @@ h1 {
   opacity: .6;
 }
 
+.getaway-card {
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+  }
+ }
+  
 .flats-index-container {
   display: flex;
   margin: 20px;

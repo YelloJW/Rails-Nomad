@@ -12,19 +12,31 @@ Flat.destroy_all
 
 puts "Creating seeds"
 
-file_one = URI.open('https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80')
+file_one = URI.open('https://images.unsplash.com/photo-1520321661969-8310372a8ea3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80')
+file_one_photo2 = URI.open('https://images.unsplash.com/photo-1552335270-a1cdfc205557?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1656&q=80')
+file_one_photo3 = URI.open('https://images.unsplash.com/photo-1478281437946-5179e2443a10?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
 flat_one = Flat.new(name: "Romantic Getaway in the Woods", description: "Really cosy", address: "Moorside, Lydford Nr, Okehampton, Dartmoor, EX20 4AY", price_per_night: 100, sleeps: 2, electricity: true, drinking_water: true, flat_type: "Cabin", user_id: 1, details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." )
 flat_one.photos.attach(io: file_one, filename: 'some-image.jpg', content_type: 'image/jpg')
+flat_one.photos.attach(io: file_one_photo2, filename: 'some-image2.jpg', content_type: 'image/jpg')
+flat_one.photos.attach(io: file_one_photo3, filename: 'some-image3.jpg', content_type: 'image/jpg')
 flat_one.save
 
-file_two = URI.open('https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=802&q=80')
+file_two = URI.open('https://images.unsplash.com/photo-1542321994-0df81c449c17?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80')
+file_two_photo2 = URI.open('https://images.unsplash.com/photo-1546420536-98a689a2074b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2389&q=80')
+file_two_photo3 = URI.open('https://images.unsplash.com/photo-1552840631-d56341170ac4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80')
 flat_two = Flat.new(name: "Remote cabin on the mountain top", description: "Really remote", address: "Okehampton, Dartmoor, EX20 4HF", price_per_night: 95, sleeps: 4, electricity: true, drinking_water: true, flat_type: "Cabin", user_id: 1, details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
 flat_two.photos.attach(io: file_two, filename: 'some-image.jpg', content_type: 'image/jpg')
+flat_two.photos.attach(io: file_two_photo2, filename: 'some-image2.jpg', content_type: 'image/jpg')
+flat_two.photos.attach(io: file_two_photo3, filename: 'some-image3.jpg', content_type: 'image/jpg')
 flat_two.save
 
 file_three = URI.open('https://images.unsplash.com/photo-1482192505345-5655af888cc4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80')
+file_three_photo2 = URI.open('https://images.unsplash.com/photo-1535747790212-30c585ab4867?ixlib=rb-1.2.1&auto=format&fit=crop&w=1611&q=80')
+file_three_photo3 = URI.open('https://images.unsplash.com/photo-1493275396257-7df0f22e0c88?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80')
 flat_three = Flat.new(name: "Retreat on the beach", description: "Really windy", address: "Chagford, Dartmoor, TQ13 8JN", price_per_night: 100, sleeps: 2, electricity: true, drinking_water: true, flat_type: "Cabin", user_id: 1, details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
 flat_three.photos.attach(io: file_three, filename: 'some-image.jpg', content_type: 'image/jpg')
+flat_three.photos.attach(io: file_three_photo2, filename: 'some-image2.jpg', content_type: 'image/jpg')
+flat_three.photos.attach(io: file_three_photo3, filename: 'some-image3.jpg', content_type: 'image/jpg')
 flat_three.save
 
 Flat.create!(name: "Very spacious 2 man yurt", description: "Really spacious", address: "Princetown, Hexworthy, Yelverton, Dartmoor, PL20 6SD", price_per_night: 80, sleeps: 2, electricity: true, drinking_water: true, flat_type: "Yurt", user_id: 1, details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
@@ -65,9 +77,13 @@ flat_ten = Flat.new(name: "Oakey dokey", description: "Really oakey", address: "
 flat_ten.photos.attach(io: file_ten, filename: 'some-image.jpg', content_type: 'image/jpg')
 flat_ten.save
 
-file_eleven = URI.open('https://images.unsplash.com/photo-1562314415-f14cd8ff1535?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')
+file_eleven = URI.open('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80')
+file_eleven_photo2 = URI.open('https://images.unsplash.com/photo-1532309975451-db55af55d385?ixlib=rb-1.2.1&auto=format&fit=crop&w=1651&q=80')
+file_eleven_photo3 = URI.open('https://images.unsplash.com/photo-1502218808493-e5fd26249efc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80')
 flat_eleven = Flat.new(name: "Cute place to stay", description: "Really cute", address: "Okehampton Railway Station, Station Road, Okehampton EX20 1EJ", price_per_night: 95, sleeps: 4, electricity: true, drinking_water: true, flat_type: "Cabin", user_id: 1, details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
 flat_eleven.photos.attach(io: file_eleven, filename: 'some-image.jpg', content_type: 'image/jpg')
+flat_eleven.photos.attach(io: file_eleven_photo2, filename: 'some-image2.jpg', content_type: 'image/jpg')
+flat_eleven.photos.attach(io: file_eleven_photo3, filename: 'some-image3.jpg', content_type: 'image/jpg')
 flat_eleven.save
 
 
