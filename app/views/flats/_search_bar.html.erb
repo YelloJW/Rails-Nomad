@@ -1,0 +1,10 @@
+<div>
+  <%= simple_form_for :search, url: flats_path, method: :get do |f| %>
+    <div class="mb-4 search-form-control form-group w-100">
+      <input id="address-input" value="<%= "Search again" %>" class="form-control string required" placeholder="Location" type="text" name="search" id="search_query" />
+      <button name="button" type="submit" class="btn btn-dark nomad-button">
+        <i class="fas fa-search"></i> Search
+      </button>
+    </div>
+  <% end %>
+</div>
