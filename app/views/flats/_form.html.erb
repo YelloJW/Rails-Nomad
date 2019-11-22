@@ -5,23 +5,19 @@
     <div class="col-sm-12 col-md-8 col-lg-8">
       <%= f.input :name, label: 'Title', placeholder: "E.g. cosy cabin in the middle of the woods" %>
     </div>
-
     <div class="col-sm-12 col-md-8 col-lg-8 mt-2 ">
       <%= f.input :address, placeholder: 'What is the address of your property' %>
     </div>
     <div class="col-sm-12 col-md-8 col-lg-8 mt-2 ">
       <%= f.input :sleeps, label: 'How many people can stay here?', placeholder: 'Please enter a number', as: :integer, input_html: { min: 1 } %>
-
     </div>
     <div class="col-sm-12 col-md-8 col-lg-8 mt-2 ">
       <%= f.input :flat_type, collection: ['Yurt', 'Tipi', 'Cabin', 'Refuge', 'Barn', 'Shed'], input_html: { multiple: false }, prompt: "Please select" %>
     </div>
-
     <div class="col-sm-6 col-lg-8 d-flex flex-row mt-2 ">
       <div>
         <%= f.input :electricity %>
       </div>
-
       <div class="ml-3">
         <%= f.input :drinking_water %>
       </div>
@@ -29,10 +25,8 @@
     <div class="col-sm-12 col-md-8 col-lg-8 mt-2 ">
       <%= f.input :description, label: 'Summary', placeholder: 'Please give a short description of your property.' %>
     </div>
-
     <div class="col-sm-12 col-md-8 col-lg-8 mt-2 ">
       <%= f.input :details, :input_html => {:rows => 5}, placeholder: 'Please provide a detailed description of your property, including any other facilities, access, policies etc.' %>
-
     </div>
     <div class="col-sm-12 col-md-8 col-lg-8 mt-2 ">
       <%= f.input :price_per_night, label: 'Price per night (in £)', placeholder: 'Please enter a price per night', input_html: { min: 10 , step: 5 } %>
