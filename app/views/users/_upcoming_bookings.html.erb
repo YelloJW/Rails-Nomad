@@ -1,0 +1,21 @@
+ <div class="upcoming-bookings">
+  <h4>Upcoming bookings</h4>
+  <% upcoming_bookings = current_user.bookings.select { |booking| booking.from_date > Date.today } %>
+  <% if upcoming_bookings != [] %>
+    <% upcoming_bookings.each do |booking| %>
+        <div class="upcoming-bookings-card">
+          <%= link_to flat_path(booking.flat) do %>
+          <%= cl_image_tag booking.flat.photos.first.key %>
+          <% end %>
+          <div class="upcoming-bookings-description">
+            <h5><%= booking.flat.name %></h5>
+            From: <%= booking.from_date %> / <%= booking.to_date %></p>
+            <p><%= booking.flat.description %></p>
+          </div>
+        </div>
+    <% end %>
+  <% else %>
+    <p>You don't have any upcoming bookings.</p>
+  <% end %>
+</div>
+

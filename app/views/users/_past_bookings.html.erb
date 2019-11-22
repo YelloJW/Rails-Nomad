@@ -1,0 +1,33 @@
+<h4>Your previous stays</h4>
+<% if current_user.bookings.any? %>
+  <% current_user.bookings.each do |booking| %>
+      <% if booking.from_date <= Date.today %>
+          <div class="upcoming-bookings-card">
+            <%= link_to flat_path(booking.flat) do %>
+              <%= cl_image_tag booking.flat.photos.first.key %>
+            <% end %>
+            <div class="upcoming-bookings-description">
+              <h5><%= booking.flat.name %></h5>
+              From: <%= booking.from_date %> / <%= booking.to_date %></p>
+              <p><%= booking.flat.description %></p>
+            </div>
+            <div>
+              <% if booking.reviews.exists? %>
+                <div>
+                  <%= booking.reviews.first.rating %>
+                  <%= booking.reviews.first.content %>
+                </div>
+              <% else %>
+              <%= render 'reviews/new', { booking: booking, review: Review.new} %>
+              <% end %>
+            </div>
+          </div>
+      <% end %>
+  <% end %>
+<% else %>
+  <p>You don't have any previous stays.</p>
+<% end %>
+
+
+
+

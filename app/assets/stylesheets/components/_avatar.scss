@@ -4,6 +4,9 @@
   height: 56px;
   object-fit: cover;
   border: 1px solid white;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .avatar-large {
@@ -12,15 +15,25 @@
   height: 56px;
   object-fit: cover;
   border: 1px solid white;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .avatar-bordered {
   width: 40px;
   border-radius: 50%;
   border: 1px solid white;
+  &:hover {
+    cursor: pointer;
+  }
 }
+
 .avatar-square {
   width: 40px;
   border-radius: 0px;
   border: 1px solid white;
+  &:hover {
+    cursor: pointer;
+  }
 }
