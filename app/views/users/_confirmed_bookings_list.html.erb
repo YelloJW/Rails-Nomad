@@ -1,14 +1,25 @@
-  <h2>Confirmed bookings...</h2>
-  <% current_user.bookings.each do |booking| %>
-  <% if booking.confirmed %>
-          <div class="dashboard-list">
-            <img src="https://images.unsplash.com/photo-1536395155544-a3ba483e0b9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80" class="card-img-booking mr-1" alt="Yurt in the countryside">
-            <p><strong><%= booking.flat.name %></strong></p>
-            <p>From: <strong><%= booking.from_date %></strong></p>
-            <p>To: <strong><%= booking.to_date %></strong></p>
-            <p>Request by: <strong><%= booking.user.first_name %></strong></p>
-            <p><%= link_to "cancel", booking_path(booking), method: :delete  %></p>
+
+
+  <h4>Your previous stays</h4>
+    <div class="row d-flex">
+      <% current_user.bookings.each do |booking| %>
+          <div class="col-12 col-md-6 col-lg-6">
+            <div class="card">
+              <% if booking.from_date <= Date.today %>
+                    <div class="dashboard-list past-bookings">
+                      <img src="https://images.unsplash.com/photo-1536395155544-a3ba483e0b9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80" class="card-img-booking card-larger mr-1" alt="Yurt in the countryside">
+                      <h5><%= booking.flat.name %></h5>
+                      <!-- <p>From: <strong><%= booking.from_date %></strong></p> -->
+                      <!-- <p>To: <strong><%= booking.to_date %></strong></p> -->
+                      <%= link_to "Leave a review", flat_path(booking.flat), class: " nomad-button-invert"  %>
+                      <!-- <p>Request by: <strong><%= booking.user.first_name %></strong></p> -->
+                      <!-- <p><%= link_to "cancel", booking_path(booking), method: :delete  %></p> -->
+                    </div>
+              <% end %>
+            </div>
           </div>
-    <% end %>
-  <% end %>
-  <hr>
+      <% end %>
+    </div>
+    <hr>
+
+

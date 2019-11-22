@@ -1,3 +1,29 @@
+.login .nomad-button {
+  background-color: white;
+  color: #2A4740;
+  border-radius: 5px;
+  border: 1px solid #2A4740;
+  padding: 6px 12px;
+  transition: opacity 0.5s ease;
+  &:hover {
+    opacity: 0.7;
+    color: #2A4740;
+  }
+}
+
+.signup .nomad-button {
+  background-color: #2A4740;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid white;
+  padding: 6px 12px;
+  transition: opacity 0.5s ease;
+  &:hover {
+    opacity: 0.7;
+    color: white;
+  }
+}
+
 .nomad-button {
   background-color: #2A4740;
   color: white;
@@ -20,6 +46,9 @@
   transition: opacity 0.5s ease;
     &:hover {
       opacity: 0.7;
+      color: #2A4740;
+      text-decoration: none;
+
     }
 }
 
@@ -31,6 +60,11 @@
   display: flex;
   justify-content: center;
   padding-bottom: 30px;
+}
+
+.button-center1 {
+  display: flex;
+  justify-content: center;
 }
 
 .search-button {
@@ -61,20 +95,28 @@ button:focus {
   transition: opacity 0.5s ease;
     &:hover{
       opacity: 0.7;
+      color: white;
     }
 p {
   font-weight: bold;
   color: white;
   margin: 0;
-  line-height: 1;
+  line-height: 1.5;
   font-size: 12px;
 }
 i {
   margin-right: 5px;
   font-size: 10px;
-  line-height: 1.5;
+  line-height: 1.6;
 }
+.add-review-btn {
+  color: #2A4740;
+  background-color: white;
 }
+
+}
+
+
 
 #my_link {
   text-decoration: none;
