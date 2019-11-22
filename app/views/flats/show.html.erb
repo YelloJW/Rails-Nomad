@@ -51,6 +51,11 @@
               <h5 class="header-font-weight">Description</h5>
               <p><%= @flat.details %></p>
             </div>
+            <hr>
+            <div class="padded-headers-top">
+              <h5 class="header-font-weight">Reviews</h5>
+              <%= render 'reviews_list' %>
+            </div>
           </div>
         </div>
       </div>
@@ -58,7 +63,6 @@
     <!-- flat address at bottom of carousel -->
 
     <!-- Review form -->
-    <%= render 'review_form' %>
     <!-- Reviews -->
-    <%= render 'reviews_list' %>
+
   </div>
