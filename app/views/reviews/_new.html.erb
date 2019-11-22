@@ -1,6 +1,5 @@
 <div class="container">
-
-  <%= simple_form_for [@booking, @review] do |f| %>
+  <%= simple_form_for([booking, review]) do |f| %>
     <%= f.input :rating, label: 'Give us your rating', collection: (1..5) %>
     <%= f.input :content, label: 'Be descriptive...' %>
     <%= f.button :submit %>
