@@ -3,9 +3,9 @@
  -->
   <h1><%= @message %></h1>
 <!-- Partial for booking requests -->
-  <%= render 'booking_request_list', class: "text-center" %>
+  <%= render 'upcoming_bookings', class: "text-center" %>
 <!-- Partial for confirmed bookings -->
-  <%= render 'confirmed_bookings_list' %>
+  <%= render 'past_bookings' %>
 <!-- Partial for flats list view (if host logic needs to be implemented) -->
   <%= render 'host_flat_list' %>
 </div>
