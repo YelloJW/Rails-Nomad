@@ -12,14 +12,14 @@
                 From: <%= booking.from_date %> / <%= booking.to_date %></p>
                 <p><%= booking.flat.description %></p>
               </div>
-              <div class="w-50 p-3">
+              <div class="w-50 p-3 text-secondary">
                 <% if booking.reviews.exists? %>
-                  <div>
+                  <div class="px-4">
                     <h5>Your review</h5>
                     <% booking.reviews.first.rating.times do %>
                       <i class="fas fa-star"></i>
                     <% end %>
-                    <p><em>"<%= booking.reviews.first.content %>"</em></p>
+                    <p class="mt-2"><em>"<%= booking.reviews.first.content %>"</em></p>
                   </div>
                 <% else %>
                 <%= render 'reviews/new', { booking: booking, review: Review.new} %>
