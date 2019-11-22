@@ -5,8 +5,7 @@
   object-fit: cover;
   border: 1px solid white;
   &:hover {
-    opacity: 0.7;
-    color: #2A4740;
+    cursor: pointer;
   }
 }
 
@@ -17,8 +16,7 @@
   object-fit: cover;
   border: 1px solid white;
   &:hover {
-    opacity: 0.7;
-    color: #2A4740;
+    cursor: pointer;
   }
 }
 
@@ -27,8 +25,7 @@
   border-radius: 50%;
   border: 1px solid white;
   &:hover {
-    opacity: 0.7;
-    color: #2A4740;
+    cursor: pointer;
   }
 }
 
@@ -37,7 +34,6 @@
   border-radius: 0px;
   border: 1px solid white;
   &:hover {
-    opacity: 0.7;
-    color: #2A4740;
+    cursor: pointer;
   }
 }
