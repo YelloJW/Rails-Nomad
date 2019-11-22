@@ -1,8 +1,5 @@
-<% if @flat.bookings.any? %>
-  <% if @flat.bookings.where(user_id: current_user).last.reviews.any? == false %>
-    <% if @flat.bookings.where(user_id: current_user).any? &&
+<% if @flat.bookings.where(user: current_user).last&.reviews&.any? %>
+    <%# if @flat.bookings.where(user_id: current_user).any? &&
           Flat.find(@flat.id).bookings.where(user_id: current_user).last.from_date <= Date.today %>
-      <%= render 'reviews/new', { booking: @booking, review: @review } %>
-    <% end %>
-  <% end %>
+  <%= render 'reviews/new', { booking: @booking, review: @review } %>
 <% end %>
