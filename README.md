@@ -1,11 +1,12 @@
+# Nomad
 A Ruby on Rails Web Application for adventurers looking for unique accommodation in highly remote locations (e.g. refuges, huts, yurts and teepees).
 
-#Features
+# Features
 - Search by Location
 - Login in and book accomodation
 - Manage upcoming bookings and reviewing previous stays on your dashboard
 
-#Tech 
+# Tech 
 - Ruby on Rails
 - PostreSQL
 - Devise for authentication
