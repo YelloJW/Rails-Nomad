@@ -75,7 +75,7 @@ GEM
     ffi (1.11.2)
     font-awesome-sass (5.6.1)
       sassc (>= 1.11)
-    geocoder (1.5.2)
+    geocoder (1.6.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     http-accept (1.7.0)
